@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Ring Rose</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../StyleLibrary/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container-fluid">
+    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-primary mb-1">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                      class="bi bi-bullseye" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1M8 2A6 6 0 1 0 8 14z"/>
                     <path d="M8 12A4 4 0 1 1 8 4M8 5A3 3 0 1 0 8 11z"/>
@@ -19,6 +20,9 @@
                 </svg>
                 Ring Rose
             </span>
+            <div>
+                <a class="nav-link text-white" href="../index.html">返回首页</a>
+            </div>
         </div>
     </nav>
     <div class="row">
@@ -90,7 +94,13 @@
                     </div>
                     <!-- Rotate -->
                     <div class="d-none card-body" id="rotateSetting">
-                        <div class="input-group mb-2">
+                        <div class="input-group mb-3">
+                            <label for="sameGapAngle" class="input-group-text">当内外环的缝隙角度小于</label>
+                            <input type="number" class="form-control" value="3" id="sameGapAngle">
+                            <span class="input-group-text">度时，视为通缝。</span>
+                            <button type="button" class="btn btn-outline-dark" onclick="sameGapAngleButton()">变更角度</button>
+                        </div>
+                        <div class="input-group mb-3">
                             <span class="input-group-text">外环：</span>
                             <button type="button" class="btn btn-outline-dark" onclick="rotateRing(false, false)">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -112,7 +122,7 @@
                             </button>
                             <span class="input-group-text" id="ringOutCylinder">U1</span>
                         </div>
-                        <div class="input-group mb-2">
+                        <div class="input-group mb-3">
                             <span class="input-group-text">内环：</span>
                             <button type="button" class="btn btn-outline-dark"  onclick="rotateRing(true, false)">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -202,7 +212,7 @@
             <div class="modal-body">
                 <p class="h2 mb-3">Welcome</p>
                 <p class="fw-bold">欢迎使用本应用，本应用为个人作品，结果仅供参考，请谨慎采纳。</p>
-                <p class="text-muted">当前版本：1.1.0(beta)</p>
+                <p class="text-muted">当前版本：1.2.0(beta)</p>
                 <p class="text-muted">应用作者：August</p>
             </div>
             <div class="modal-footer">
@@ -211,7 +221,7 @@
         </div>
     </div>
 </div>
-<script src="js/bootstrap.min.js"></script>
+<script src="../ScriptLibrary/bootstrap.min.js"></script>
 <script src="js/RingRose.js"></script>
 <script src="js/form.js"></script>
 </body>

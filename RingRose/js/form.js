@@ -210,6 +210,20 @@ function drawRingRose() {
     rose.drawCylinders(true);
 }
 
+function sameGapAngleButton(){
+    let sameAngle = document.querySelector("#sameGapAngle").value;
+    if (sameAngle === ""){
+        errorPrompt("角度输入为空！");
+    }else {
+        sameAngle = parseFloat(sameAngle);
+        if (sameAngle <= 0){
+            errorPrompt("应输入大于零的角度。")
+        }else {
+            rose.sameGapAngle = sameAngle;
+        }
+    }
+}
+
 function rotateRing(isIn, isClockwise) {
     let cylinderNumber = isIn ? ringInsideNumber : ringOutsideNumber;
     if (isClockwise)

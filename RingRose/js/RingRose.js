@@ -24,6 +24,7 @@ class RingRoseDrawer {
             38.571428, 38.571428, 38.571428, 38.571428, 38.571428, 38.571428];
         this.segmentNames = ["K", "B1", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "B2"];
         this.cylinder = {count: 28, word: "U", start: 1, step: 1, firstAngle: 0};
+        this.sameGapAngle = 3;
     }
 
     setRingRose(x, y, radius) {
@@ -162,9 +163,9 @@ class RingRoseDrawer {
         return gap;
     }
 
-    checkAngleInArray(angle, angleArray, offset){
+    checkAngleInArray(angle, angleArray){
         for (let i = 0;i<angleArray.length;i++){
-            if (Math.abs(angle - angleArray[i]) < offset){
+            if (Math.abs(angle - angleArray[i]) < this.sameGapAngle){
                 return true;
             }
         }
@@ -177,16 +178,16 @@ class RingRoseDrawer {
         let outArray = this.getGapPosition(ringOut * cylinderAngle);
         let inArray = this.getGapPosition(ringIn * cylinderAngle);
         for (let i = 0;i< outArray.length; i++){
-            let check = this.checkAngleInArray(outArray[i], inArray, 3);
+            let check = this.checkAngleInArray(outArray[i], inArray);
             if (check){
                 sameGapAngle = true;
                 if (isDraw) {
                     this.context.save();
                     this.context.translate(this.location.x, this.location.y);
-                    this.context.rotate(Rad(outArray[i] - 91));
-                    this.drawSegment(this.insideRadius * 0.7, 2, "#06266F", true);
-                    this.drawSegment(this.insideRadius * 1.15, 2, "#1240AB", true);
-                    this.drawSegment(this.insideRadius * 1.6, 2, "#6C8CD5", true);
+                    this.context.rotate(Rad(outArray[i] - 90 - this.sameGapAngle / 2));
+                    this.drawSegment(this.insideRadius * 0.7, this.sameGapAngle, "#06266F", true);
+                    this.drawSegment(this.insideRadius * 1.15, this.sameGapAngle, "#1240AB", true);
+                    this.drawSegment(this.insideRadius * 1.6, this.sameGapAngle, "#6C8CD5", true);
                     this.context.restore();
                 }
             }
