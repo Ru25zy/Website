@@ -10,27 +10,27 @@
     <!-- navbar -->
     <nav class="navbar navbar-dark bg-primary mb-3">
         <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">我的个人博客</span>
-        </div>
-    </nav>
-    <div class="row">
-        <div class="col-9">
-            <div class="list-group">
-                <a href="RingRose/index.html" class="list-group-item list-group-item-action" aria-current="true">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Ring Rose</h5>
-                        <small>2022.08.31</small>
-                    </div>
-                    <p class="mb-1">简单的 Ring Rose 助手。</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-3">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="256" height="256" fill="currentColor" class="bi bi-1-circle"  viewBox="0 0 100 100">
+            <span class="navbar-brand mb-0 h1">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="32" height="32" fill="currentColor" class="bi bi-1-circle" viewBox="0 0 100 100">
                 <style>
-                    @keyframes gear01 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-                    @keyframes gear02 { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+                    @keyframes gear01 {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    @keyframes gear02 {
+                        0% {
+                            transform: rotate(360deg);
+                        }
+                        100% {
+                            transform: rotate(0deg);
+                        }
+                    }
                 </style>
                 <defs>
                     <g id="tooth">
@@ -46,16 +46,16 @@
             M-8 0 A8 8 0 0 0 8 0 A8 8 0 0 0 -8 0z"/>
                     </g>
                     <g id="circle-half">
-                        <use xlink:href="#tooth-1" />
+                        <use xlink:href="#tooth-1"/>
                         <use xlink:href="#tooth-1" transform="rotate(36)"/>
                         <use xlink:href="#tooth-1" transform="rotate(-36)"/>
                         <use xlink:href="#tooth-1" transform="rotate(72)"/>
                         <use xlink:href="#tooth-1" transform="rotate(-72)"/>
                     </g>
                     <g id="circle">
-                        <use xlink:href="#circle-in" />
+                        <use xlink:href="#circle-in"/>
                         <use xlink:href="#circle-half" transform="rotate(180)"/>
-                        <use xlink:href="#circle-half" />
+                        <use xlink:href="#circle-half"/>
                     </g>
                     <g id="gear01">
                         <use xlink:href="#circle" style="animation: gear01 5s linear infinite;"/>
@@ -68,8 +68,72 @@
                 <use xlink:href="#gear02" transform="translate(70,50),rotate(18),scale(0.5)"/>
                 <use xlink:href="#gear01" transform="translate(37.5,73.5),scale(0.6)"/>
             </svg>
+                我的个人博客
+            </span>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-9">
+            <div class="list-group">
+                <a href="RingRose/index.html" class="list-group-item list-group-item-action" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Ring Rose</h5>
+                        <small>2022.08.31</small>
+                    </div>
+                    <p class="mb-1">简单的 Ring Rose 助手。</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    北京时间:
+                </div>
+                <div class="card-body">
+                    <p class="card-text text-center fw-bolder h1 mb-0" id="timeString">00:00</p>
+                    <p class="card-text text-center text-muted fw-bolder h3" id="dateString">00-00-00 日</p>
+                    <div class="row">
+                        <div class="col-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                 class="bi bi-sunrise" viewBox="0 0 16 16">
+                                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </div>
+                        <div class="col-4">
+                            <span class="card-text fw-bolder h5" id="sunRise">00:00</span>
+                        </div>
+                        <div class="col-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                 class="bi bi-sunset" viewBox="0 0 16 16">
+                                <path d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708l1.5 1.5zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </div>
+                        <div class="col-4">
+                            <span class="card-text fw-bolder h5" id="sunDown">00:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-end text-muted">
+                    本功能由 <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow">Time.is</a> 提供
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
+<span class="d-none" id="Beijing_z43d"></span>
+<script src="//widget.time.is/en.js"></script>
+<script>
+    time_is_widget.init({
+        Beijing_z43d: {
+            template: "TIME<br>DATE<br>SUN",
+            date_format: "dayname daynum/monthnum/yy",
+            sun_format: "Sunrise: srhour:srminute Sunset: sshour:ssminute<br>Day length: dlhoursh dlminutesm",
+            coords: "39.9075000,116.3972300"
+        }
+    });
+</script>
+<script src="js/timeCard.js"></script>
 </body>
 </html>
