@@ -220,6 +220,8 @@ function sameGapAngleButton(){
             errorPrompt("应输入大于零的角度。")
         }else {
             rose.sameGapAngle = sameAngle;
+            drawRingRose();
+            rose.checkGap(ringOutsideNumber, ringInsideNumber, drawSameGap);
         }
     }
 }

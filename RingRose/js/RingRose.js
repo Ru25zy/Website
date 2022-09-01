@@ -24,15 +24,7 @@ class RingRoseDrawer {
             38.571428, 38.571428, 38.571428, 38.571428, 38.571428, 38.571428];
         this.segmentNames = ["K", "B1", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "B2"];
         this.cylinder = {count: 28, word: "U", start: 1, step: 1, firstAngle: 0};
-        this.sameGapAngle = 3;
-    }
-
-    setRingRose(x, y, radius) {
-        this.location = {
-            x: x,
-            y: y
-        };
-        this.insideRadius = radius;
+        this.sameGapAngle = 2;
     }
 
     setNameFont(fontWeight, fontSize, fontFamily, color) {

@@ -26,6 +26,48 @@
             </div>
         </div>
         <div class="col-3">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 width="256" height="256" fill="currentColor" class="bi bi-1-circle"  viewBox="0 0 100 100">
+                <style>
+                    @keyframes gear01 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                    @keyframes gear02 { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+                </style>
+                <defs>
+                    <g id="tooth">
+                        <path d="M-6 0 l2 -10 h8 l2 10z"/>
+                    </g>
+                    <g id="tooth-1">
+                        <use xlink:href="#tooth" y="-29"/>
+                    </g>
+                    <g id="circle-in">
+                        <path d="M-30 0 A30 30 0 0 1 30 0 A30 30 0 0 1 -30 0
+            M-20 0 A20 20 0 0 0 20 0 A20 20 0 0 0 -20 0z"/>
+                        <path d="M-14 0 A14 14 0 0 1 14 0 A14 14 0 0 1 -14 0
+            M-8 0 A8 8 0 0 0 8 0 A8 8 0 0 0 -8 0z"/>
+                    </g>
+                    <g id="circle-half">
+                        <use xlink:href="#tooth-1" />
+                        <use xlink:href="#tooth-1" transform="rotate(36)"/>
+                        <use xlink:href="#tooth-1" transform="rotate(-36)"/>
+                        <use xlink:href="#tooth-1" transform="rotate(72)"/>
+                        <use xlink:href="#tooth-1" transform="rotate(-72)"/>
+                    </g>
+                    <g id="circle">
+                        <use xlink:href="#circle-in" />
+                        <use xlink:href="#circle-half" transform="rotate(180)"/>
+                        <use xlink:href="#circle-half" />
+                    </g>
+                    <g id="gear01">
+                        <use xlink:href="#circle" style="animation: gear01 5s linear infinite;"/>
+                    </g>
+                    <g id="gear02">
+                        <use xlink:href="#circle" style="animation: gear02 5s linear infinite;"/>
+                    </g>
+                </defs>
+                <use xlink:href="#gear01" transform="translate(51,23),scale(0.4)"/>
+                <use xlink:href="#gear02" transform="translate(70,50),rotate(18),scale(0.5)"/>
+                <use xlink:href="#gear01" transform="translate(37.5,73.5),scale(0.6)"/>
+            </svg>
         </div>
     </div>
 </div>
