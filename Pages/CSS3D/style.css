@@ -1,0 +1,7 @@
+.redRect-100{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: red;
+    border: 1px solid black;
+}
