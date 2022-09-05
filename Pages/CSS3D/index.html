@@ -70,13 +70,15 @@
                 <use xlink:href="#gear02" transform="translate(70,50),rotate(18),scale(0.5)"/>
                 <use xlink:href="#gear01" transform="translate(37.5,73.5),scale(0.6)"/>
             </svg>
-                我的个人博客
+                使用纯 CSS 制作简单的 3D 图形
             </span>
-            <a class="nav-link text-white" href="../../index.html">返回首页</a>
+            <div>
+                <a class="nav-link text-white" href="../../index.html">返回首页</a>
+            </div>
         </div>
     </nav>
     <div class="row">
-        <span class="h5">使用纯 CSS 来制作 3D 图形</span>
+        <span class="h5 fw-bolder">CSS3 提供的三维变换功能</span>
     </div>
     <div class="row mb-3">
         <span>CSS3 提供了 3D 转换功能，因此使用此功能可以创建一些简单的 3D 图形，以下是简单示例：</span>
@@ -125,7 +127,7 @@
             </div>
         </div>
     </div>
-    <!-- Example for rotate on x y z -->
+    <!-- Example for translate on x y z -->
     <div class="row mb-5">
         <div class="col">
             <div class="row text-center  mb-2">
@@ -163,20 +165,61 @@
                 </code>
             </div>
             <div class="row justify-content-md-center">
-                <div class="redRect-100" style="transform: translateZ(500px);">
+                <div class="redRect-100" style="transform: translateZ(10px);">
                     <span>这是一个 div 元素。</span>
                 </div>
             </div>
         </div>
     </div>
     <!-- Create cube -->
-    <div class="row">
-        <span>知道了以上变换之后就能够创建一个正方体了：</span>
 
-    </div>
-    <!-- -->
     <div class="row">
-        <span>以下是一个正方体的代码示例：</span>
+        <span class="h5 fw-bolder">简单的纯 CSS 正方体演示动画</span>
+    </div>
+    <div class="row mb-3">
+        <span>知道了以上变换之后就能够创建一个正方体了：</span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">创建一个 div 元素作为正方体的容器。</li>
+                <li class="list-group-item">在容器 div 元素中创建六个边长相等的 div 元素做为正方体的六个面。</li>
+                <li class="list-group-item">将六个面旋转、移动到相应的位置。</li>
+                <li class="list-group-item">现在只要对容器进行变换就能让正方体进行相应的变化。</li>
+            </ol>
+        </div>
+        <div class="col ">
+            <div class="row justify-content-center">
+                <span class="mb-3">下面是一个纯 CSS3 制作的六个 div 元素经过变换后组成一个正方体的动画。</span>
+                <div class="cube-temple">
+                    <div class="cube-temple-front text-center">
+                        <span class="h1" style="line-height: 200px">前</span>
+                    </div>
+                    <div class="cube-temple-left text-center">
+                        <span class="h1" style="line-height: 200px">左</span>
+                    </div>
+                    <div class="cube-temple-back text-center">
+                        <span class="h1" style="line-height: 200px">后</span>
+                    </div>
+                    <div class="cube-temple-right text-center">
+                        <span class="h1" style="line-height: 200px">右</span>
+                    </div>
+                    <div class="cube-temple-top text-center">
+                        <span class="h1" style="line-height: 200px">上</span>
+                    </div>
+                    <div class="cube-temple-bottom text-center">
+                        <span class="h1" style="line-height: 200px">下</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cube code -->
+    <div class="row">
+        <span class="h5 fw-bolder">纯 CSS 正方体示例代码</span>
+    </div>
+    <div class="row">
+        <span>以下是一个正方体的代码示例，右侧是显示效果：</span>
     </div>
     <div class="row">
         <div class="col">
@@ -235,9 +278,111 @@
             </div>
         </div>
     </div>
+    <!-- -->
+    <div class="row">
+        <span class="h5 fw-bolder">CSS 3D 变换</span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- width -->
+            <div class="input-group mb-3">
+                <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text">宽度</span>
+                        <input type="number" class="form-control" min="0" max="300" value="200" id="rect-width-number"
+                               onchange="setRectSize(this, true)">
+                        <span class="input-group-text">px</span>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <input type="range" class="form-range" min="0" max="300" value="200" id="rect-width-range"
+                           onchange="setRectSize(this, true)" oninput="setRectSize(this, true)">
+                </div>
+            </div>
+            <!-- height -->
+            <div class="input-group mb-3">
+                <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text">高度</span>
+                        <input type="number" class="form-control" min="0" max="300" value="200" id="rect-height-number"
+                               onchange="setRectSize(this, false)">
+                        <span class="input-group-text">px</span>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <input type="range" class="form-range" min="0" max="300" value="200" id="rect-height-range"
+                           onchange="setRectSize(this, false)" oninput="setRectSize(this, false)">
+                </div>
+            </div>
+            <!-- color -->
+            <div class="input-group mb-3">
+                <label for="rect-backcolor" class="input-group-text">矩形的填充颜色：</label>
+                <input type="color" class="form-control form-control-color" id="rect-backcolor" value="#FF5C5C"
+                       title="颜色选择器" onchange="setRectBackcolor(this)">
+            </div>
+            <!-- rotateX -->
+            <div class="input-group mb-3">
+                <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text">X 轴旋转</span>
+                        <input type="number" class="form-control" min="-360" max="360" value="0" id="rect-rotateX-number"
+                               onchange="setRectRotate(this)">
+                        <span class="input-group-text">度</span>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <input type="range" class="form-range" min="-360" max="360" value="0" id="rect-rotateX-range"
+                           onchange="setRectRotate(this)" oninput="setRectRotate(this)">
+                </div>
+            </div>
+            <!-- rotateY -->
+            <div class="input-group mb-3">
+                <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text">Y 轴旋转</span>
+                        <input type="number" class="form-control" min="-360" max="360" value="0" id="rect-rotateY-number"
+                               onchange="setRectRotate(this)">
+                        <span class="input-group-text">度</span>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <input type="range" class="form-range" min="-360" max="360" value="0" id="rect-rotateY-range"
+                           onchange="setRectRotate(this)" oninput="setRectRotate(this)">
+                </div>
+            </div>
+            <!-- rotateXZ -->
+            <div class="input-group mb-3">
+                <div class="col-4">
+                    <div class="input-group">
+                        <span class="input-group-text">Z 轴旋转</span>
+                        <input type="number" class="form-control" min="-360" max="360" value="0" id="rect-rotateZ-number"
+                               onchange="setRectRotate(this)">
+                        <span class="input-group-text">度</span>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col">
+                    <input type="range" class="form-range" min="-360" max="360" value="0" id="rect-rotateZ-range"
+                           onchange="setRectRotate(this)" oninput="setRectRotate(this)">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row justify-content-center">
+                <div id="rect-container">
+                    <div id="rect-example"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="../../ScriptLibrary/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="script.js"></script>
 </body>
 </html>

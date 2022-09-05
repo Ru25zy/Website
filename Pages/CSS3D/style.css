@@ -4,8 +4,182 @@
     position: relative;
     background: red;
     border: 1px solid black;
+    transform-style: preserve-3d;
 }
 
+/***********************************************/
+/* Create cube animation */
+.cube-temple{
+    width: 200px;
+    height: 200px;
+    animation: cube-temple 20s ease both 2s infinite;
+    transform-style: preserve-3d;
+}
+@keyframes cube-temple {
+    0%{
+        transform:rotateX(0) rotateY(0) rotateZ(0);
+    }
+    60%{
+        transform:rotateX(20deg) rotateY(20deg) rotateZ(20deg);
+    }
+    65%{
+        transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    80%{
+        transform:rotateX(80deg) rotateY(70deg) rotateZ(100deg);
+    }
+    90%{
+        transform:rotateX(-360deg) rotateY(360deg) rotateZ(-360deg);
+    }
+    95%{
+        transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100%{
+        transform:rotateX(0) rotateY(0) rotateZ(0);
+    }
+}
+
+.cube-temple div{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid black;
+}
+
+/* Each side of cube's transform animation */
+.cube-temple-left{
+    animation: cube-temple-left 20s ease both 2s infinite;
+}
+@keyframes cube-temple-left {
+    0%{
+        transform: translateX(0) rotateY(0);
+    }
+    5%{
+        transform:translateX(-101px) rotateY(0);
+    }
+    10%{
+        transform:translateX(-101px) rotateY(90deg);
+    }
+    95%{
+        transform:translateX(-101px) rotateY(90deg);
+    }
+    100%{
+        transform: translateX(0) rotateY(0);
+    }
+}
+.cube-temple-right{
+    animation: cube-temple-right 20s ease both 2s infinite;
+}
+@keyframes cube-temple-right {
+    0%{
+        transform:translateX(0) rotateY(0);
+    }
+    10%{
+        transform:translateX(0) rotateY(0);
+    }
+    15%{
+        transform:translateX(101px) rotateY(0);
+    }
+    20%{
+        transform:translateX(101px) rotateY(-90deg);
+    }
+    95%{
+        transform:translateX(101px) rotateY(-90deg);
+    }
+    100%{
+        transform: translateX(0) rotateY(0);
+    }
+}
+.cube-temple-top{
+    animation: cube-temple-top 20s ease both 2s infinite;
+}
+@keyframes cube-temple-top {
+    0%{
+        transform:translateX(0) rotateY(0);
+    }
+    20%{
+        transform:translateX(0) rotateY(0);
+    }
+    25%{
+        transform:translateY(-101px) rotateX(0);
+    }
+    30%{
+        transform:translateY(-101px) rotateX(90deg);
+    }
+    95%{
+        transform:translateY(-101px) rotateX(90deg);
+    }
+    100%{
+        transform: translateX(0) rotateY(0);
+    }
+}
+.cube-temple-bottom{
+    animation: cube-temple-bottom 20s ease both 2s infinite;
+}
+@keyframes cube-temple-bottom {
+    0%{
+        transform:translateX(0) rotateY(0);
+    }
+    30%{
+        transform:translateX(0) rotateY(0);
+    }
+    35%{
+        transform:translateY(101px) rotateX(0);
+    }
+    40%{
+        transform:translateY(101px) rotateX(-90deg);
+    }
+    95%{
+        transform:translateY(101px) rotateX(-90deg);
+    }
+    100%{
+        transform: translateX(0) rotateY(0);
+    }
+}
+.cube-temple-front{
+    animation: cube-temple-front 20s ease both 2s infinite;
+}
+@keyframes cube-temple-front {
+    0%{
+        transform:translateX(0);
+    }
+    40%{
+        transform:translateX(0);
+    }
+    50%{
+        transform:translateZ(101px);
+    }
+    95%{
+        transform:translateZ(101px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.cube-temple-back{
+    animation: cube-temple-back 20s ease both 2s infinite;
+}
+@keyframes cube-temple-back {
+    0%{
+        transform:translateX(0);
+    }
+    50%{
+        transform:translateX(0);
+    }
+    60%{
+        transform:translateZ(-101px);
+    }
+    95%{
+        transform:translateZ(-101px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+/***********************************************/
+
+/*********************************************/
 /* 容器 */
 #code-example-cube{
     width: 200px;
@@ -42,4 +216,22 @@
 }
 #code-example-cube-back{
     transform: translateZ(-100px);
+}
+/*********************************************/
+
+#house-container{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: none;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateX(-20deg) rotateY(10deg);
+}
+
+#rect-example{
+    width: 200px;
+    height: 200px;
+    transform: rotateY(30deg);
+    background: #FF5C5C;
 }
