@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>纯 CSS 制作的 3D</title>
     <link rel="stylesheet" href="../../StyleLibrary/bootstrap.min.css">
+    <link rel="stylesheet" href="../../StyleLibrary/default.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -172,6 +173,68 @@
         <span>知道了以上变换之后就能够创建一个正方体了：</span>
 
     </div>
+    <!-- -->
+    <div class="row">
+        <span>以下是一个正方体的代码示例：</span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <pre class="row">
+                <code class="col-10">
+#code-example-cube{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: none;
+    transform-style: preserve-3d;
+    transform:rotateX(-30deg) rotateY(30deg);
+}
+
+#code-example-cube div{
+    width: 200px;
+    height: 200px;
+    border: 20px solid rgba(255,0,0,0.8);
+    background: rgba(255,0,0,0.3);
+    position: absolute;
+}
+
+#code-example-cube-left{
+    transform: translateX(-100px) rotateY(90deg);
+}
+#code-example-cube-Right{
+     transform: translateX(100px) rotateY(-90deg);
+}
+#code-example-cube-top{
+    transform: translateY(-100px) rotateX(90deg);
+}
+#code-example-cube-bottom{
+    transform: translateY(100px) rotateX(-90deg);
+}
+#code-example-cube-front{
+    transform: translateZ(100px);
+}
+#code-example-cube-back{
+    transform: translateZ(-100px);
+}
+            </code>
+            </pre>
+        </div>
+        <div class="col  m-auto">
+            <div class="row  justify-content-center">
+                <div id="code-example-cube">
+                    <div id="code-example-cube-left"></div>
+                    <div id="code-example-cube-Right"></div>
+                    <div id="code-example-cube-top"></div>
+                    <div id="code-example-cube-bottom"></div>
+                    <div id="code-example-cube-front"></div>
+                    <div id="code-example-cube-back"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script src="../../ScriptLibrary/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </body>
 </html>
