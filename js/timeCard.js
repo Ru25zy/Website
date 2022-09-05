@@ -1,34 +1,25 @@
-let timeIs = document.querySelector("#Beijing_z43d");
-let children = timeIs.children;
+let weekdays = ["日","一","二","三","四","五","六"];
 
-let timeString = document.querySelector("#timeString");
-let dateString = document.querySelector("#dateString");
-let sunRise = document.querySelector("#sunRise");
-let sunDown = document.querySelector("#sunDown");
-
-let weekdays = {
-    Monday: "一",
-    Tuesday: "二",
-    Wednesday: "三",
-    Thursday: "四",
-    Friday: "五",
-    Saturday: "六",
-    Sunday: "日",
-}
-
-function getTime() {
-    if (children.length > 0){
-        timeString.innerHTML = children[0].textContent;
-        let array = children[2].textContent.split(" ");
-        let year = array[1].split("/");
-        year = year[2] + "-" +year[1] + "-" +year[0];
-        dateString.innerHTML = year + " " + weekdays[array[0]];
-        array = children[4].textContent.split("Day");
-        let sunTemp = array[0].split(" ");
-        sunRise.innerHTML = sunTemp[1];
-        sunDown.innerHTML = sunTemp[3];
-        console.log(children[4].textContent);
+function getSystemTime() {
+    const current = new Date();
+    const timeArray = [current.getHours(), current.getMinutes(),current.getSeconds(),
+        current.getFullYear(), current.getMonth()+1, current.getDate()];
+    const elements = ["system-hour", "system-minute", "system-second", "system-year", "system-month", "system-day"];
+    for (let i=0; i<timeArray.length;i++){
+        const element = document.querySelector("#" + elements[i]);
+        element.textContent = timeArray[i] < 10 ? "0" + timeArray[i] : timeArray[i].toString();
     }
-    window.setTimeout(getTime, 1000);
+    document.querySelector("#system-week").textContent = "星期"+weekdays[current.getDay()];
+    const minuteHand = document.querySelector("#minute-hand");
+    const minuteAngle = 6 * timeArray[1];
+    minuteHand.setAttribute("transform","translate(8,8) rotate(" + minuteAngle + ")")
+    const hourHand = document.querySelector("#hour-hand");
+    const hourAngle = 30 * timeArray[0];
+    hourHand.setAttribute("transform","translate(8,8) rotate(" + hourAngle + ")")
+    window.setTimeout(getSystemTime, 1000);
 }
-getTime();
+
+document.body.onload = function (){
+    getSystemTime();
+    getList();
+}
