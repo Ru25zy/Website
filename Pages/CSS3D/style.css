@@ -6,23 +6,25 @@
     border: 1px solid black;
 }
 
+/* 容器 */
 #code-example-cube{
     width: 200px;
     height: 200px;
     position: relative;
     perspective: none;
+    /* 指定变换方式为 3D */
     transform-style: preserve-3d;
     transform:rotateX(-30deg) rotateY(30deg);
 }
-
+/* 确定六个面的大小和样式 */
 #code-example-cube div{
     width: 200px;
     height: 200px;
-    border: 20px solid rgba(255,0,0,0.8);
+    border: 10px solid rgba(255,0,0,0.8);
     background: rgba(255,0,0,0.3);
     position: absolute;
 }
-
+/* 移动和旋转每个面组成一个正方体 */
 #code-example-cube-left{
     transform: translateX(-100px) rotateY(90deg);
 }

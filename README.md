@@ -2,4 +2,4 @@
 
 My website
 
-https://ru25zy.github.io/Website/
+https://ru25zy.github.io/
