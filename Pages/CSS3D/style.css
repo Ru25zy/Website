@@ -199,22 +199,22 @@
     position: absolute;
 }
 /* 移动和旋转每个面组成一个正方体 */
-#code-example-cube-left{
+.code-example-cube-left{
     transform: translateX(-100px) rotateY(90deg);
 }
-#code-example-cube-Right{
+.code-example-cube-Right{
      transform: translateX(100px) rotateY(-90deg);
 }
-#code-example-cube-top{
+.code-example-cube-top{
     transform: translateY(-100px) rotateX(90deg);
 }
-#code-example-cube-bottom{
+.code-example-cube-bottom{
     transform: translateY(100px) rotateX(-90deg);
 }
-#code-example-cube-front{
+.code-example-cube-front{
     transform: translateZ(100px);
 }
-#code-example-cube-back{
+.code-example-cube-back{
     transform: translateZ(-100px);
 }
 /*********************************************/
@@ -225,13 +225,31 @@
     position: relative;
     perspective: none;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
     transform: rotateX(-20deg) rotateY(10deg);
+}
+
+#rect-container{
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+}
+
+#rect-container div{
+    pointer-events:none;
 }
 
 #rect-example{
     width: 200px;
     height: 200px;
-    transform: rotateY(30deg);
+    position: absolute;
     background: #FF5C5C;
+    transform-style: preserve-3d;
+}
+
+#rect-example div{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border: 1px solid white;
+    background: rgba(0, 0, 202, 0.1);
 }

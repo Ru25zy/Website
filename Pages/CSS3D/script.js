@@ -1,34 +1,105 @@
 const rectContainer = document.querySelector("#rect-container");
 const rect = document.querySelector("#rect-example");
 
-const inputNumberWidth = document.querySelector("#rect-width-number");
-const inputNumberHeight = document.querySelector("#rect-height-number");
-const inputRangeWidth = document.querySelector("#rect-width-range");
-const inputRangeHeight = document.querySelector("#rect-height-range");
-function setRectSize(element, isWidth) {
-    let length = parseInt(element.value);
-    if (element.id === "rect-width-range" || element.id === "rect-height-range")
-        isWidth ? inputNumberWidth.value = length : inputNumberHeight.value = length;
-    else if(element.id === "rect-width-number" || element.id === "rect-height-number"){
-        if (length > 300) this.value = 300;
-        if (length < 0) this.value = 0;
-        length = element.value;
-        isWidth ? inputRangeWidth.value = length : inputRangeHeight.value = length;
+const inputNumber = document.querySelector("#rect-input-number");
+const inputRange = document.querySelector("#rect-input-range");
+
+
+const inputName = document.querySelector("#rect-input-name");
+const inputUnit = document.querySelector("#rect-input-unit");
+
+let rectInfo = {
+    width : 200,
+    height : 200,
+    rotateX : 0, rotateY : 0, rotateZ : 0,
+    translateX : 0, translateY : 0, translateZ : 0,
+    openPerspective : false,
+    perspective : 300, xAxis : 50, yAxis : 50
+}
+
+const inputPerspective = document.querySelector("#setting > div:nth-child(6)");
+const inputPerspectiveOrigin = document.querySelector("#setting > div:nth-child(7)");
+
+function setRectInfo(){
+    rect.style.width = rectInfo.width + "px";
+    rect.style.height = rectInfo.height + "px";
+    rect.style.transform = "translateX("+rectInfo.translateX + "px) " +
+        "translateY(" + rectInfo.translateY + "px) " +
+        "translateZ(" + rectInfo.translateZ + "px)"  +
+        "rotateX(" + rectInfo.rotateX + "deg) " +
+        "rotateY(" + rectInfo.rotateY + "deg) " +
+        "rotateZ(" + rectInfo.rotateZ + "deg)";
+    if (rectInfo.openPerspective) {
+        rectContainer.style.perspective = rectInfo.perspective + "px";
+        rectContainer.style.perspectiveOrigin = rectInfo.xAxis + "% " + rectInfo.yAxis + "%";
+    }else {
+        rectContainer.style.perspective = "none";
     }
-    isWidth ? rect.style.width = length+"px" : rect.style.height = length+"px";
 }
 
-function setRectBackcolor(element){
-    rect.style.background = element.value;
+const radioWidth = document.querySelector("#rect-width");
+const radioPerspective = document.querySelector("#rect-perspective");
+function openSettingPerspective(element){
+    if (element.checked){
+        rectInfo.openPerspective = true;
+        inputPerspectiveOrigin.className = "row";
+        inputPerspective.className = "row";
+        radioPerspective.checked = true;
+        inputSelect(radioPerspective);
+    }else{
+        rectInfo.openPerspective = false;
+        inputPerspectiveOrigin.className = "row d-none";
+        inputPerspective.className = "row d-none";
+        radioWidth.checked = true;
+        inputSelect(radioWidth);
+    }
+    setRectInfo();
 }
 
-function setRectRotate(element){
-    let angle = parseInt(element.value);
-    angle = angle < -360 ? -360 : angle;
-    angle = angle > 360 ? 360 : angle;
+function getSettingName(number){
+    let string = inputName.textContent;
+    rectInfo[string] = number;
+    setRectInfo();
+}
+
+
+function inputSelect(element) {
     let id = element.id.split("-");
-    id[2] = id[2] === "number" ? "range" : "number";
-    rect.style.transform = id[1] + "(" + angle + "deg)"
-    id = id.join("-");
-    document.querySelector("#" + id).value = angle;
+    inputName.textContent = id[1];
+    if (id[1] === "width" || id[1] === "height" || id[1].substring(0, id[1].length - 1) === "translate") {
+        inputUnit.textContent = "px";
+        inputRange.min = inputNumber.min = -300;
+        inputRange.max = inputNumber.max = 300;
+    } else if (id[1].substring(0, id[1].length - 1) === "rotate") {
+        inputUnit.textContent = "deg"
+        inputRange.min = inputNumber.min = -360;
+        inputRange.max = inputNumber.max = 360;
+    } else if (id[1].substring(1, id[1].length) === "Axis") {
+        inputUnit.textContent = "%"
+        inputRange.min = inputNumber.min = 0;
+        inputRange.max = inputNumber.max = 100;
+    }else if(id[1] === "perspective" ){
+        inputUnit.textContent = "px"
+        inputRange.min = inputNumber.min = 0;
+        inputRange.max = inputNumber.max = 1000;
+    }
+    inputNumber.value = inputRange.value = rectInfo[id[1]];
+}
+
+function inputRangeChange(element) {
+    let number = element.value
+    inputNumber.value = number;
+    getSettingName(parseInt(number));
+}
+
+
+function inputNumberChange(element) {
+    let number = parseInt(element.value);
+    if (number > element.max) {
+        element.value = element.max;
+    } else if (number < element.min) {
+        element.value = element.min;
+    }
+    inputRange.value = number;
+    getSettingName(number);
 }

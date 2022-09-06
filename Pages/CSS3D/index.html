@@ -268,113 +268,208 @@
         <div class="col  m-auto">
             <div class="row  justify-content-center">
                 <div id="code-example-cube">
-                    <div id="code-example-cube-left"></div>
-                    <div id="code-example-cube-Right"></div>
-                    <div id="code-example-cube-top"></div>
-                    <div id="code-example-cube-bottom"></div>
-                    <div id="code-example-cube-front"></div>
-                    <div id="code-example-cube-back"></div>
+                    <div class="code-example-cube-left"></div>
+                    <div class="code-example-cube-Right"></div>
+                    <div class="code-example-cube-top"></div>
+                    <div class="code-example-cube-bottom"></div>
+                    <div class="code-example-cube-front"></div>
+                    <div class="code-example-cube-back"></div>
                 </div>
             </div>
         </div>
     </div>
     <!-- -->
-    <div class="row">
-        <span class="h5 fw-bolder">CSS 3D 变换</span>
+    <div class="row mb-3">
+        <span class="h5 fw-bolder">CSS 3D 变换尝试</span>
     </div>
     <div class="row">
-        <div class="col">
-            <!-- width -->
-            <div class="input-group mb-3">
-                <div class="col-4">
-                    <div class="input-group">
-                        <span class="input-group-text">宽度</span>
-                        <input type="number" class="form-control" min="0" max="300" value="200" id="rect-width-number"
-                               onchange="setRectSize(this, true)">
-                        <span class="input-group-text">px</span>
+        <div class="col-5" id="setting">
+            <div class="row mb-3">
+                <span class="h5">参数设置：</span>
+                <small>蓝色矩形是为方便观察 3D 效果设置的。</small>
+            </div>
+            <!-- Width and height -->
+            <div class="row">
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-width" checked
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-width">
+                            宽度
+                        </label>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col">
-                    <input type="range" class="form-range" min="0" max="300" value="200" id="rect-width-range"
-                           onchange="setRectSize(this, true)" oninput="setRectSize(this, true)">
-                </div>
-            </div>
-            <!-- height -->
-            <div class="input-group mb-3">
-                <div class="col-4">
-                    <div class="input-group">
-                        <span class="input-group-text">高度</span>
-                        <input type="number" class="form-control" min="0" max="300" value="200" id="rect-height-number"
-                               onchange="setRectSize(this, false)">
-                        <span class="input-group-text">px</span>
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-height"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-height">
+                            高度
+                        </label>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col">
-                    <input type="range" class="form-range" min="0" max="300" value="200" id="rect-height-range"
-                           onchange="setRectSize(this, false)" oninput="setRectSize(this, false)">
-                </div>
             </div>
-            <!-- color -->
-            <div class="input-group mb-3">
-                <label for="rect-backcolor" class="input-group-text">矩形的填充颜色：</label>
-                <input type="color" class="form-control form-control-color" id="rect-backcolor" value="#FF5C5C"
-                       title="颜色选择器" onchange="setRectBackcolor(this)">
-            </div>
-            <!-- rotateX -->
-            <div class="input-group mb-3">
+
+            <!-- rotate3D -->
+            <div class="row">
                 <div class="col-4">
-                    <div class="input-group">
-                        <span class="input-group-text">X 轴旋转</span>
-                        <input type="number" class="form-control" min="-360" max="360" value="0" id="rect-rotateX-number"
-                               onchange="setRectRotate(this)">
-                        <span class="input-group-text">度</span>
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-rotateX"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-rotateX">
+                            绕 X 轴旋转
+                        </label>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col">
-                    <input type="range" class="form-range" min="-360" max="360" value="0" id="rect-rotateX-range"
-                           onchange="setRectRotate(this)" oninput="setRectRotate(this)">
-                </div>
-            </div>
-            <!-- rotateY -->
-            <div class="input-group mb-3">
                 <div class="col-4">
-                    <div class="input-group">
-                        <span class="input-group-text">Y 轴旋转</span>
-                        <input type="number" class="form-control" min="-360" max="360" value="0" id="rect-rotateY-number"
-                               onchange="setRectRotate(this)">
-                        <span class="input-group-text">度</span>
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-rotateY"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-rotateY">
+                            绕 Y 轴旋转
+                        </label>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col">
-                    <input type="range" class="form-range" min="-360" max="360" value="0" id="rect-rotateY-range"
-                           onchange="setRectRotate(this)" oninput="setRectRotate(this)">
-                </div>
-            </div>
-            <!-- rotateXZ -->
-            <div class="input-group mb-3">
                 <div class="col-4">
-                    <div class="input-group">
-                        <span class="input-group-text">Z 轴旋转</span>
-                        <input type="number" class="form-control" min="-360" max="360" value="0" id="rect-rotateZ-number"
-                               onchange="setRectRotate(this)">
-                        <span class="input-group-text">度</span>
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-rotateZ"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-rotateZ">
+                            绕 Z 轴旋转
+                        </label>
                     </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col">
-                    <input type="range" class="form-range" min="-360" max="360" value="0" id="rect-rotateZ-range"
-                           onchange="setRectRotate(this)" oninput="setRectRotate(this)">
+            </div>
+
+            <!-- translate -->
+            <div class="row mb-3">
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-translateX"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-translateX">
+                            沿 X 轴移动
+                        </label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-translateY"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-translateY">
+                            沿 Y 轴移动
+                        </label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-translateZ"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-translateZ">
+                            沿 Z 轴移动
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- origin -->
+            <div class="row">
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                        <input class="form-check-input mt-0" type="checkbox" id="openPerspective"
+                               onclick="openSettingPerspective(this)">
+                    </div>
+                    <label for="openPerspective" class="input-group-text">开启透视设置，透视属性应设置于父元素。</label>
+                </div>
+            </div>
+            <div class="row d-none">
+                <div class="col-3">
+                    <span>perspective</span>
+                </div>
+                <div class="col-9">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-perspective"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-perspective">
+                            距离视图的距离。
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-none">
+                <div class="col-4">
+                    <span>perspective-origin</span>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-xAxis"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-xAxis">
+                            x-axis
+                        </label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input" type="radio" name="rect-setting" id="rect-yAxis"
+                                   onclick="inputSelect(this)">
+                        </div>
+                        <label class="input-group-text" for="rect-yAxis">
+                            y-axis
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input -->
+            <div class="input-group mb-3">
+                <div class="col-8">
+                    <div class="input-group">
+                        <span class="input-group-text" id="rect-input-name">width</span>
+                        <input type="number" class="form-control" min="0" max="300" value="200" id="rect-input-number"
+                               onchange="inputNumberChange(this)">
+                        <span class="input-group-text" id="rect-input-unit">px</span>
+                    </div>
+                    <div class="input-group-text">
+                        <input type="range" class="form-range" min="0" max="300" value="200" id="rect-input-range"
+                               onchange="inputRangeChange(this)" oninput="inputRangeChange(this)">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-7">
             <div class="row justify-content-center">
                 <div id="rect-container">
-                    <div id="rect-example"></div>
+                    <div id="rect-example">
+                        <div class="code-example-cube-left"></div>
+                        <div class="code-example-cube-Right"></div>
+                        <div class="code-example-cube-top"></div>
+                        <div class="code-example-cube-bottom"></div>
+                        <div class="code-example-cube-front"></div>
+                        <div class="code-example-cube-back"></div>
+                    </div>
                 </div>
             </div>
         </div>
