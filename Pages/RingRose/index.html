@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../svg/icon.svg">
     <title>Ring Rose</title>
     <link rel="stylesheet" href="../../StyleLibrary/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -9,22 +10,10 @@
 <body>
 <div class="container-fluid">
     <!-- Navbar -->
-    <nav class="navbar navbar-dark bg-primary mb-1">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                     class="bi bi-bullseye" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1M8 2A6 6 0 1 0 8 14z"/>
-                    <path d="M8 12A4 4 0 1 1 8 4M8 5A3 3 0 1 0 8 11z"/>
-                    <path d="M8 15A7 7 0 1 0 8 1M8 5A3 3 0 1 1 8 11zz"/>
-                </svg>
-                Ring Rose
-            </span>
-            <div>
-                <a class="nav-link text-white" href="../../index.html">返回首页</a>
-            </div>
-        </div>
-    </nav>
+    <nav></nav>
+    <div class="row mb-3">
+        <span class="h3 fw-bolder text-center">简单的 Ring Rose 助手</span>
+    </div>
     <div class="row">
         <div class="col-7" id="canvasContainer">
             <canvas id="canvas">抱歉，您的浏览器版本无法兼容该应用！</canvas>
@@ -222,6 +211,7 @@
     </div>
 </div>
 <script src="../../ScriptLibrary/bootstrap.min.js"></script>
+<script src="../../js/unification.js"></script>
 <script src="js/RingRose.js"></script>
 <script src="js/form.js"></script>
 </body>

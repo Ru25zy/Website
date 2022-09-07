@@ -1,5 +1,5 @@
+/* Time show card on right side. */
 let weekdays = ["日","一","二","三","四","五","六"];
-
 function getSystemTime() {
     const current = new Date();
     const timeArray = [current.getHours(), current.getMinutes(),current.getSeconds(),
@@ -19,7 +19,34 @@ function getSystemTime() {
     window.setTimeout(getSystemTime, 1000);
 }
 
-document.body.onload = function (){
-    getSystemTime();
-    getList();
+function createNavbar(){
+    const nav = document.querySelector("nav");
+    nav.textContent = "";
+    nav.className = "navbar navbar-dark bg-primary mb-3";
+    let div = document.createElement("div");
+    div.className = "container-fluid";
+    nav.append(div);
+
+    let span = document.createElement("span");
+    span.className = "navbar-brand fw-bolder";
+    span.style.fontSize = "2em";
+    div.append(span);
+
+    let img = document.createElement("img");
+    img.src = "../../svg/navigation.svg";
+    img.width = 32;
+    img.height = 30;
+    span.append(img);
+
+    let title= document.createTextNode("我的个人博客");
+    span.append(title);
+
+    let divLink = document.createElement("div");
+    div.append(divLink);
+
+    let a = document.createElement("a");
+    a.className = "nav-link text-white";
+    a.href = "../../index.html";
+    a.textContent = "返回首页"
+    divLink.append(a);
 }

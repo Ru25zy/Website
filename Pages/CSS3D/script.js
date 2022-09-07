@@ -92,7 +92,6 @@ function inputRangeChange(element) {
     getSettingName(parseInt(number));
 }
 
-
 function inputNumberChange(element) {
     let number = parseInt(element.value);
     if (number > element.max) {
@@ -102,4 +101,8 @@ function inputNumberChange(element) {
     }
     inputRange.value = number;
     getSettingName(number);
+}
+
+document.body.onload = function (){
+    createNavbar();
 }

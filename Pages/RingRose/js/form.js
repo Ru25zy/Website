@@ -277,6 +277,7 @@ function drawButtonClick(){
 }
 
 function init() {
+    createNavbar();
 
     const modal = new bootstrap.Modal('#welcomeModal', {
         keyboard: false

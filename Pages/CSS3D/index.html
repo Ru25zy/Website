@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../svg/icon.svg">
     <title>纯 CSS 制作的 3D</title>
     <link rel="stylesheet" href="../../StyleLibrary/bootstrap.min.css">
     <link rel="stylesheet" href="../../StyleLibrary/default.min.css">
@@ -10,73 +11,10 @@
 <body>
 <div class="container">
     <!-- navbar -->
-    <nav class="navbar navbar-dark bg-primary mb-3">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="32" height="32" fill="currentColor" class="bi bi-1-circle" viewBox="0 0 100 100">
-                <style>
-                    @keyframes gear01 {
-                        0% {
-                            transform: rotate(0deg);
-                        }
-                        100% {
-                            transform: rotate(360deg);
-                        }
-                    }
-
-                    @keyframes gear02 {
-                        0% {
-                            transform: rotate(360deg);
-                        }
-                        100% {
-                            transform: rotate(0deg);
-                        }
-                    }
-                </style>
-                <defs>
-                    <g id="tooth">
-                        <path d="M-6 0 l2 -10 h8 l2 10z"/>
-                    </g>
-                    <g id="tooth-1">
-                        <use xlink:href="#tooth" y="-29"/>
-                    </g>
-                    <g id="circle-in">
-                        <path d="M-30 0 A30 30 0 0 1 30 0 A30 30 0 0 1 -30 0
-            M-20 0 A20 20 0 0 0 20 0 A20 20 0 0 0 -20 0z"/>
-                        <path d="M-14 0 A14 14 0 0 1 14 0 A14 14 0 0 1 -14 0
-            M-8 0 A8 8 0 0 0 8 0 A8 8 0 0 0 -8 0z"/>
-                    </g>
-                    <g id="circle-half">
-                        <use xlink:href="#tooth-1"/>
-                        <use xlink:href="#tooth-1" transform="rotate(36)"/>
-                        <use xlink:href="#tooth-1" transform="rotate(-36)"/>
-                        <use xlink:href="#tooth-1" transform="rotate(72)"/>
-                        <use xlink:href="#tooth-1" transform="rotate(-72)"/>
-                    </g>
-                    <g id="circle">
-                        <use xlink:href="#circle-in"/>
-                        <use xlink:href="#circle-half" transform="rotate(180)"/>
-                        <use xlink:href="#circle-half"/>
-                    </g>
-                    <g id="gear01">
-                        <use xlink:href="#circle" style="animation: gear01 5s linear infinite;"/>
-                    </g>
-                    <g id="gear02">
-                        <use xlink:href="#circle" style="animation: gear02 5s linear infinite;"/>
-                    </g>
-                </defs>
-                <use xlink:href="#gear01" transform="translate(51,23),scale(0.4)"/>
-                <use xlink:href="#gear02" transform="translate(70,50),rotate(18),scale(0.5)"/>
-                <use xlink:href="#gear01" transform="translate(37.5,73.5),scale(0.6)"/>
-            </svg>
-                使用纯 CSS 制作简单的 3D 图形
-            </span>
-            <div>
-                <a class="nav-link text-white" href="../../index.html">返回首页</a>
-            </div>
-        </div>
-    </nav>
+    <nav></nav>
+    <div class="row">
+        <span class="h1 fw-bolder text-center">使用纯 CSS 制作简单的 3D 图形</span>
+    </div>
     <div class="row">
         <span class="h5 fw-bolder">CSS3 提供的三维变换功能</span>
     </div>
@@ -478,6 +416,7 @@
 
 <script src="../../ScriptLibrary/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script src="../../js/unification.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

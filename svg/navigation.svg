@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="256" height="256" fill="currentColor" class="bi bi-1-circle"  viewBox="0 0 100 100">
+     width="256" height="256" fill="white" class="bi bi-1-circle"  viewBox="0 0 100 100">
     <style>
         @keyframes gear01 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         @keyframes gear02 { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }

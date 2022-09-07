@@ -2,81 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <link rel="shortcut icon" href="svg/icon.svg">
+    <title>我的个人博客</title>
     <link rel="stylesheet" href="StyleLibrary/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <!-- navbar -->
     <nav class="navbar navbar-dark bg-primary mb-3">
         <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="32" height="32" fill="currentColor" class="bi bi-1-circle" viewBox="0 0 100 100">
-                <style>
-                    @keyframes gear01 {
-                        0% {
-                            transform: rotate(0deg);
-                        }
-                        100% {
-                            transform: rotate(360deg);
-                        }
-                    }
-
-                    @keyframes gear02 {
-                        0% {
-                            transform: rotate(360deg);
-                        }
-                        100% {
-                            transform: rotate(0deg);
-                        }
-                    }
-                </style>
-                <defs>
-                    <g id="tooth">
-                        <path d="M-6 0 l2 -10 h8 l2 10z"/>
-                    </g>
-                    <g id="tooth-1">
-                        <use xlink:href="#tooth" y="-29"/>
-                    </g>
-                    <g id="circle-in">
-                        <path d="M-30 0 A30 30 0 0 1 30 0 A30 30 0 0 1 -30 0
-            M-20 0 A20 20 0 0 0 20 0 A20 20 0 0 0 -20 0z"/>
-                        <path d="M-14 0 A14 14 0 0 1 14 0 A14 14 0 0 1 -14 0
-            M-8 0 A8 8 0 0 0 8 0 A8 8 0 0 0 -8 0z"/>
-                    </g>
-                    <g id="circle-half">
-                        <use xlink:href="#tooth-1"/>
-                        <use xlink:href="#tooth-1" transform="rotate(36)"/>
-                        <use xlink:href="#tooth-1" transform="rotate(-36)"/>
-                        <use xlink:href="#tooth-1" transform="rotate(72)"/>
-                        <use xlink:href="#tooth-1" transform="rotate(-72)"/>
-                    </g>
-                    <g id="circle">
-                        <use xlink:href="#circle-in"/>
-                        <use xlink:href="#circle-half" transform="rotate(180)"/>
-                        <use xlink:href="#circle-half"/>
-                    </g>
-                    <g id="gear01">
-                        <use xlink:href="#circle" style="animation: gear01 5s linear infinite;"/>
-                    </g>
-                    <g id="gear02">
-                        <use xlink:href="#circle" style="animation: gear02 5s linear infinite;"/>
-                    </g>
-                </defs>
-                <use xlink:href="#gear01" transform="translate(51,23),scale(0.4)"/>
-                <use xlink:href="#gear02" transform="translate(70,50),rotate(18),scale(0.5)"/>
-                <use xlink:href="#gear01" transform="translate(37.5,73.5),scale(0.6)"/>
-            </svg>
+            <span class="navbar-brand fw-bolder" style="font-size: 2em">
+                <img src="svg/navigation.svg" width="32" height="32" alt="navigation">
                 我的个人博客
             </span>
         </div>
     </nav>
     <!-- Content -->
     <div class="row">
+        <div class="col-1"></div>
         <!-- Left Content -->
-        <div class="col-9">
+        <div class="col-7">
             <div id="content-list" class="list-group"></div>
         </div>
         <!-- Right sidebar -->
@@ -96,7 +42,7 @@
                                   transform="translate(8,8)"></PATH>
                             <path d="M-8 0 A8 8 0 0 1 8 0 A8 8 0 0 1 -8 0 M-7 0A7 7 0 0 0 7 0 A7 7 0 0 0 -7 0z"
                                   transform="translate(8,8)"/>
-                            <path d="M-1 0A1 1 0 0 0 1 0 A1 1 0 0 0 -1 0z" transform="translate(8,8)"  opacity="0.7"/>
+                            <path d="M-1 0A1 1 0 0 0 1 0 A1 1 0 0 0 -1 0z" transform="translate(8,8)" opacity="0.7"/>
                         </svg>
                     </div>
                     <div class="col-9 text-end">
@@ -122,9 +68,11 @@
                 </div>
             </div>
         </div>
+        <div class="col-1"></div>
     </div>
 </div>
+<script src="js/unification.js"></script>
 <script src="js/listItem.js"></script>
-<script src="js/timeCard.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
