@@ -68,19 +68,46 @@ h3 {
     border-radius: 50%;
 }
 
+#no03-container{
+    /* 设置内部元素的对其方式为间隔平均分布 */
+    justify-content: space-around;
+}
 #no03-shine{
-    width: 100px;
+    width: 60px;
     height: 60px;
     border: 1px solid white;
-    display: block;
-    font-size: 2em;
+    border-radius: 50%;
+    font-size: 25px;
     font-weight: bolder;
-    color: #464545;
-    text-shadow: 1px 1px 0 black;
+    /* 简单的文字内阴影效果 */
+    color: rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px #ffcc00, 0 0 0 #000000,
+                 1px 1px 2px #ffcc00;
     /* 文字居中 */
-    line-height: 60px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+/* 第一个鼠标悬停发光效果 */
 #no03-shine:hover{
-     box-shadow: 0 0 10px white inset,0 0 10px white, 0 0 20px white,0 0 30px white;
+    color: white;
+    text-shadow: 0 0 0 #ffcc00, 0 0 10px #ffcc00,
+                 0 0 15px #ffcc00, 0 0 20px #ffcc00,
+                 0 0 35px #ffcc00, 0 0 40px #228dff,
+                 0 0 50px #ffcc00, 0 0 75px #ffcc00;
+     box-shadow: 0 0 10px white inset,0 0 10px white,
+                 0 0 20px white,0 0 30px white;
  }
+/* 第二个类似灯泡发光效果 */
+#no03-bulb{
+    width: 60px;
+    height: 60px;
+    background: #b9f3fe;
+    /* 发光效果 */
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1),
+                0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 10px rgb(100 231 253),
+                inset 0 0 8px rgba(61, 157, 247, 0.8),
+                inset 0 -2px 5px rgba(185, 231, 253, 0.3),
+                inset 0 -3px 8px rgba(185, 231, 253, 0.5);
+}
