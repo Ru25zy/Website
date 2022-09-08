@@ -14,6 +14,7 @@
     <div class="row">
         <h1 class="text-center fw-bolder">一些使用 CSS 制作的简单效果</h1>
     </div>
+    <!-- no 0 background -->
     <div class="row">
         <h3 class="fw-bolder">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-balloon"
@@ -21,42 +22,200 @@
                 <path fill-rule="evenodd"
                       d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z"/>
             </svg>
-            简单渐变背景和凹陷效果
+            背景设置
         </h3>
     </div>
     <div class="row">
-        <div class="col" style="font-size: 0.8em">
+        <div class="col-6">
         <pre>
-          <code>
-#container{
-    width: 200px;
-    height: 200px;
+            <code>
+&lt;div class="example-container"&gt;&lt;/div&gt;
+            </code>
+            <code>
+.example-container{
+    width: 20em;
+    height: 20em;
     position: relative;
-    background-color: #454545;
-    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-    display: grid;
-    place-content: center;
-}
-#circle{
-    width:100px;
-    height: 100px;
-    position: relative;
-    border-radius: 50%;
-    box-shadow: 2em 0 2em rgb(0,0,0,0.2) inset, -2em 0 2em rgb(255,255,255,0.1) inset;
-    color: white;
+    /* 内部元素居中 */
+    display: flex;
     justify-content: center;
     align-items: center;
+    /* 渐变背景效果 */
+    background-color: #454545;
+    background-image: linear-gradient(
+            135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+            </code>
+        </pre>
+        </div>
+        <div class="col-6 m-auto">
+            <div class="row justify-content-center align-content-center">
+                <div class="example-container"></div>
+            </div>
+        </div>
+    </div>
+    <!-- no 1 sunken -->
+    <div class="row">
+        <h3 class="fw-bolder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-balloon"
+                 viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z"/>
+            </svg>
+            简单凹陷效果
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-6">
+        <pre>
+            <code>
+&lt;div class="example-container"&gt;
+    &lt;div id="no01-circle"&gt;
+        &lt;span&gt;测试&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div>
+            </code>
+          <code>
+/* 内部 div 元素设置 */
+#no01-circle {
+    width: 10em;
+    height: 10em;
+    color: white;
+    /* 文字居中 */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 50% 圆角将 div 元素绘制成圆 */
+    border-radius: 50%;
+    /* 内部阴影设置达到凹陷效果 */
+    box-shadow: 2em 0 3em rgba(0, 0, 0, 0.2) inset,
+                -2em 0 3em rgba(255, 255, 255, 0.1) inset;
 }
           </code>
         </pre>
         </div>
-        <div class="col m-auto">
-            <div class="row justify-content-center">
-                <div id="no01-container">
+        <div class="col-6 m-auto">
+            <div class="row justify-content-center align-content-center">
+                <div class="example-container">
                     <div id="no01-circle">
                         <span>测试</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- no 2 3d button -->
+    <div class="row">
+        <h3 class="fw-bolder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-balloon"
+                 viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z"/>
+            </svg>
+            简单 3D 质感的按钮效果
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <pre>
+                <code>
+&lt;div class="example-container" id="no02-container"&gt;
+    &lt;div class="no02-button"&gt;1&lt;/div&gt;
+    &lt;div class="no02-button" id="no2-button-circle"&gt;2&lt;/div&gt;
+&lt;/div&gt;
+                </code>
+                <code>
+#no02-container {
+    /* 设置内部元素的对其方式为间隔平均分布 */
+    justify-content: space-around;
+}
+/* 按钮的外观 */
+.no02-button {
+    width: 3em;
+    height: 3em;
+    color: white;
+    /* 文字居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 内部阴影绘制高光 */
+    box-shadow: 0.05em 0 0.1em rgba(255, 255, 255, 0.2) inset;
+}
+.no02-button:before {
+    content: "";
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    /* 外部阴影绘制按钮阴影 */
+    box-shadow: 0.1em 0.1em 0 0.1em black,
+                0.3em 0 0.3em rgba(0, 0, 0, 0.5);
+}
+#no2-button-circle, #no2-button-circle:before {
+    /* 通过圆角设置绘制圆形按钮 */
+    border-radius: 50%;
+}
+                </code>
+            </pre>
+        </div>
+        <div class="col-6 m-auto">
+            <div class="row justify-content-center align-content-center">
+                <div class="example-container" id="no02-container">
+                    <div class="no02-button">1</div>
+                    <div class="no02-button" id="no2-button-circle">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- no 3 -->
+    <div class="row">
+        <h3 class="fw-bolder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-balloon"
+                 viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z"/>
+            </svg>
+            简单发光效果
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-6">
+        <pre>
+            <code>
+
+            </code>
+        </pre>
+        </div>
+        <div class="col-6 m-auto">
+            <div class="row justify-content-center align-content-center">
+                <div class="example-container">
+                    <div id="no03-shine">A</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- no 3 -->
+    <div class="row">
+        <h3 class="fw-bolder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-balloon"
+                 viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z"/>
+            </svg>
+            简单发光效果
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-6">
+        <pre>
+            <code>
+
+            </code>
+        </pre>
+        </div>
+        <div class="col-6 m-auto">
+            <div class="row justify-content-center align-content-center">
+                <div id="no03-container" class="example-container">
+                    <div id="no02-button"></div>
                 </div>
             </div>
         </div>

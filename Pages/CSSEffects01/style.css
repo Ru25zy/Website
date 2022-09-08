@@ -1,23 +1,86 @@
-#no01-container{
-    width: 300px;
-    height: 300px;
-    position: relative;
-    background-color: #454545;
-    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-
-    display: grid;
-    place-content: center;
+code {
+    font-size: 0.8em;
+    box-shadow: 1px 1px 5px black inset;
 }
 
-#no01-circle{
-    width:10em;
-    height: 10em;
-    position: relative;
-    border-radius: 50%;
-    box-shadow: 2em 0 3em rgb(0,0,0,0.2) inset, -2em 0 3em rgb(255,255,255,0.1) inset;
+h3 {
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 1px #ccd0d4, 0 0 0 black;
+}
 
-    color: white;
+.example-container{
+    width: 20em;
+    height: 20em;
+    position: relative;
+    /* 内部元素居中 */
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
+    /* 渐变背景效果 */
+    background-color: #454545;
+    background-image: linear-gradient(
+            135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
 }
+
+/* 内部 div 元素设置 */
+#no01-circle {
+    width: 10em;
+    height: 10em;
+    color: white;
+    /* 文字居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 50% 圆角将 div 元素绘制成圆 */
+    border-radius: 50%;
+    /* 内部阴影设置达到凹陷效果 */
+    box-shadow: 2em 0 3em rgba(0, 0, 0, 0.2) inset,
+                -2em 0 3em rgba(255, 255, 255, 0.1) inset;
+}
+
+#no02-container {
+    /* 设置内部元素的对其方式为间隔平均分布 */
+    justify-content: space-around;
+}
+/* 按钮的外观 */
+.no02-button {
+    width: 3em;
+    height: 3em;
+    color: white;
+    /* 文字居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 内部阴影绘制高光 */
+    box-shadow: 0.05em 0 0.1em rgba(255, 255, 255, 0.2) inset;
+}
+.no02-button:before {
+    content: "";
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    /* 外部阴影绘制按钮阴影 */
+    box-shadow: 0.1em 0.1em 0 0.1em black,
+                0.3em 0 0.3em rgba(0, 0, 0, 0.5);
+}
+#no2-button-circle, #no2-button-circle:before {
+    /* 通过圆角设置绘制圆形按钮 */
+    border-radius: 50%;
+}
+
+#no03-shine{
+    width: 100px;
+    height: 60px;
+    border: 1px solid white;
+    display: block;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #464545;
+    text-shadow: 1px 1px 0 black;
+    /* 文字居中 */
+    line-height: 60px;
+    text-align: center;
+}
+#no03-shine:hover{
+     box-shadow: 0 0 10px white inset,0 0 10px white, 0 0 20px white,0 0 30px white;
+ }
