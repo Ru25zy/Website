@@ -9,7 +9,7 @@ function getList(){
         a.href = items[i].href;
         content.append(a);
 
-        const div = document.createElement("div");
+        let div = document.createElement("div");
         div.className = "d-flex w-100 justify-content-between";
         a.append(div);
 
@@ -19,13 +19,18 @@ function getList(){
         div.append(h5);
 
 
-        const small = document.createElement("small");
+        let small = document.createElement("small");
         small.textContent = items[i].time;
         div.append(small);
 
         const p = document.createElement("p");
         p.textContent = items[i].describe;
         a.append(p);
+
+        small = document.createElement("small");
+        small.style.float = "right";
+        small.textContent = items[i].category;
+        a.append(small);
     }
 }
 

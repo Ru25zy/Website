@@ -1,10 +1,39 @@
-#clock-number{
-    font-size: 1.7em;
-    font-weight: bolder;
-}
-
 @media screen and (max-width:1400px){
     #clock-number > span:nth-child(4),#system-second {
         display:none;
     }
+}
+
+@media screen and (max-width:1228px){
+    #card-body{
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+a:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    position: absolute;
+    border-top: 3px solid black;
+    transition: all 0.1s;
+    clip-path: margin-box;
+}
+a:hover:after{
+    left: 0;
+}
+
+#clock-number{
+    min-width: 93px;
+    font-size: 1.7em;
+    font-weight: bolder;
+}
+
+#date{
+    min-width: 149px;
 }
