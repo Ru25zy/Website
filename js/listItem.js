@@ -19,5 +19,11 @@ const items = [
         time: "2022.09.08",
         category:"CSS",
         describe: "基于 box-shadow 和 text-shadow 制作的简单特效。"
+    },
+    {
+        href: "Pages/MidAutumn/index.html",
+        title: "中秋快乐",
+        category: "CSS,CSS动画",
+        describe: "纯 CSS 中秋快乐主题动画。"
     }
 ];

@@ -252,3 +252,14 @@ body {
     position: absolute;
     transform: translateZ(10px);
 }
+
+#home{
+    width: 100vw;
+    top: 0;
+    position: absolute;
+    text-align: right;
+}
+
+#home a{
+    color: white;
+}
